@@ -22,5 +22,13 @@
   },
   "include": [
     "src"
+  ],
+  "typeAcquisition": {
+    "enable": true
+  },
+  "exclude": [
+    "node_modules",
+    "build",
+    "dist"
   ]
 }
