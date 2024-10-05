@@ -2,13 +2,9 @@ import './styles.css';
 
 import videoSrc from './assets/bg_video.mp4'
 
-const Hpme = () => {
+const VideoContainer = () => {
   return (
-    <div className="text-container">
-        <h1>inspir@tus.nl</h1>
-
-        <h2>Web Development met Visie</h2>
-
+    <div className="container video-container">
         <video id="bg_video"
                src={videoSrc}
                autoPlay={true}
@@ -21,4 +17,4 @@ const Hpme = () => {
   )
 }
 
-export default Hpme;
+export default VideoContainer;

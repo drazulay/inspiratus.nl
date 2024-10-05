@@ -2,24 +2,169 @@ body {
     margin: 0;
     padding: 0;
     font-family: 'Raleway', sans-serif;
-    background-color: #000;
+    background-color: #000000;
 }
 
-.text-container {
-    height: 100vh;
-    width: 100vw;
+h1.title-lg {
+    font-size: 125px;
+}
+
+h1.title-sm {
+    font-size: 48px;
+}
+
+h2.title-lg {
+    font-size: 64px;
+}
+
+h2.title-sm {
+    display: none;
+    visibility: hidden;
+}
+
+.wrapper {
+    min-width: 100%;
+    min-height: 100%;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
 }
 
-.text-container h2 {
+.spacer-15 {
+    position: relative;
+    height: 15vh;
+    width: 100vw;
+}
+
+.spacer-30 {
+    position: relative;
+    height: 30vh;
+    width: 100vw;
+}
+
+.blocker {
+    position: absolute;
+    top: 0;
+    height: 100vh;
+    width: 100vw;
+    z-index: -50;
+}
+
+.overlay {
+    position: absolute;
+    top: 120vh;
+    height: auto;
+    z-index: -1;
+}
+
+.fade-in-section {
+    position: relative;
+    background-color: rgba(255, 255, 255, 0.5);
+    color: rgba(70, 26, 124, 0.7);
+    opacity: 0;
+    height: 70vh;
+    visibility: hidden;
+    transition: opacity 0.8s ease-in;
+    will-change: opacity, visibility;
+    overflow-y: hidden;
+    left: 2%;
+    width: 96%;
+    z-index: 0;
+}
+
+.is-visible {
+    visibility: visible;
+}
+
+.fade-in-section.is-visible {
+    opacity: 1;
+}
+
+.fade-in-section h1 {
+    padding: 40px 80px 0px 80px;
+    font-family: Raleway, sans-serif;
+    font-size: 50px;
+    font-weight: 900;
+    text-align: left;
+}
+
+.image-devops {
+    background-image: url(assets/devops-phases.png);
+    background-size: contain;
+    background-position: center top;
+    background-position-x: center;
+    background-position-y: top;
+    background-repeat: no-repeat;
+    min-height: 50%;
+    width: auto;
+    margin: 40px;
+}
+
+.horizontal-rule {
+    border: 0;
+    height: 2px;
+    width: 100%;
+    background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(255, 255, 255, 0.7), rgba(0, 0, 0, 0));
+}
+
+.footer {
+    position: sticky;
+    display: inline-flex;
+    align-self: flex-start;
+    justify-content: center;
+    align-items: center;
+    top: calc(100% - 200px);
+    left: 2%;
+    width: 96%;
+    background-color: rgba(255, 255, 255, 0.7);
+    color: rgba(70, 26, 124, 0.8);
+    height: 200px;
+}
+
+.box-shadow {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);;
+}
+
+.text-container {
+    position: fixed;
+    transition: background-color 0.8s ease-in;
+    left: 0;
+    top: 0;
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.0);
+    will-change: background-color;
+}
+
+.text-container.is-shrunk {
+    align-items: flex-start;
+    justify-content: flex-start;
+    position: sticky;
+    height: 250px;
+    background-color: rgba(0, 0, 255, 0.7);
+    padding: 30px 0 0px 120px;
+    top: 0;
+    width: 100%;
+    left: 0;
+}
+
+.text-container.is-shrunk h1 {
+    font-size: 150px;
+}
+
+.text-container.is-shrunk h2 {
+    display: none;
+}
+
+.text-container h1, .text-container h2 {
     margin: 0;
-    font-size: 64px;
     color: rgba(225,225,225, .01);
-    -webkit-text-stroke: 5px #000;
-    background-image: url(assets/flowers.jpg);
+    -webkit-text-stroke: 2px #ffffff;
     background-repeat: repeat;
     -webkit-background-clip:text;
     animation: animate 30s ease-in-out infinite;
@@ -28,36 +173,71 @@ body {
 }
 
 .text-container h1{
-    margin: 0;
-    font-size: 125px;
-    color: rgba(225,225,225, .01);
-    -webkit-text-stroke: 5px #000;
-    background-image: url(assets/candy.jpg);
-    background-repeat: repeat;
-    -webkit-background-clip:text;
-    animation: animate 30s ease-in-out infinite;
-    text-align: center;
-    font-weight: 900;
+    background-image: url(assets/leaves.jpg);
 }
 
-@media screen and (max-width: 1000px) {
-    .text-container h1 {
-        font-size: 96px;
-        rotate: -90deg;
-    }
-    .text-container h2 {
-        display: none;
-    }
+.text-container h2 {
+    background-image: url(assets/lavender.jpg);
+}
+
+.parallax {
+    height: 100%;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
 #bg_video {
-    z-index: -99;
+    z-index: -30;
     position: fixed;
-    opacity: 0.2;
-    right: 0;
-    bottom: 0;
-    min-width: 100%;
-    min-height: 100%;
+    left: 0;
+    top: 0;
+    min-width: 100vw;
+    min-height: 100vh;
+    display: block;
+}
+
+.chevron {
+    opacity: 1.0;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    animation: breathe 2s forwards infinite;
+    will-change: opacity;
+    margin: 80px 0 0 0;
+    height: 80px; /*height should be double border*/
+}
+
+.chevron::before,
+.chevron::after {
+    position: absolute;
+    display: block;
+    content: "";
+    border: 40px solid transparent; /*adjust size*/
+}
+
+/* Replace all text `top` below with left/right/bottom to rotate the chevron */
+
+.chevron::before {
+    top: 0;
+    border-top-color: rgba(44, 0, 110, 0.95); /*Chevron Color*/
+}
+
+.chevron::after {
+    top: -10px; /*adjust thickness*/
+    border-top-color: rgba(64, 210, 112, 0.9); /*Match background colour*/
+}
+
+@media screen and (max-width: 1000px) {
+    .container h1 {
+        font-size: 96px;
+        rotate: -90deg;
+    }
+    .container h2 {
+        display: none;
+    }
 }
 
 @keyframes animate {
@@ -72,5 +252,20 @@ body {
     }
     75% {
         background-position: right top;
+    }
+}
+
+@keyframes breathe {
+    0%, 100% {
+        opacity: 1.0;
+    }
+    50% {
+        opacity: 0.0;
+    }
+}
+
+@keyframes move-text {
+    0% {
+        top: 100vh;
     }
 }

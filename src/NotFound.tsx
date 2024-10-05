@@ -4,7 +4,7 @@ import videoSrc from './assets/bg_video.mp4';
 
 const NotFound = () => {
   return (
-    <div className="text-container">
+    <div className="container">
         <h1>404</h1>
       </div>
   )
